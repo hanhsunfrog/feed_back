@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Góp ý tài liệu học tập | Điểm 10+</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="logo-diem10.png" alt="Điểm 10+ — Vững Kiến Thức, Chắc Tư Duy">
+    </div>
+    <button class="ghost" id="adminBtn">Quản trị</button>
+  </header>
+
+  <main class="container">
+    <section id="roleScreen" class="screen active">
+      <div class="hero">
+        <span class="eyebrow">GÓP Ý TÀI LIỆU HỌC TẬP</span>
+        <h1>Thấy gì – gửi đó – cùng hoàn thiện</h1>
+        <p>Chọn đúng đối tượng để gửi góp ý. Mỗi nhóm sẽ có giao diện đơn giản, phù hợp và dễ dùng trên điện thoại.</p>
+      </div>
+
+      <div class="role-grid">
+        <button class="role-card teacher" data-role="teacher">
+          <div class="role-icon">👨‍🏫</div>
+          <h3>Giáo viên</h3>
+          <p>Phù hợp cho góp ý về kiến thức, bài tập, đáp án, hướng dẫn giải và tiến độ dạy.</p>
+        </button>
+        <button class="role-card student" data-role="student">
+          <div class="role-icon">🧑‍🎓</div>
+          <h3>Học sinh</h3>
+          <p>Phù hợp cho góp ý về phần khó hiểu, quá khó/quá dễ, cách trình bày hoặc cách làm bài.</p>
+        </button>
+        <button class="role-card parent" data-role="parent">
+          <div class="role-icon">👨‍👩‍👧</div>
+          <h3>Phụ huynh</h3>
+          <p>Phù hợp cho góp ý về độ phù hợp của tài liệu, khối lượng bài tập và khả năng tự học của con.</p>
+        </button>
+      </div>
+    </section>
+
+    <section id="formScreen" class="screen">
+      <button class="back" id="backBtn">← Quay lại</button>
+
+      <div class="panel form-layout">
+        <div class="form-main">
+          <div class="form-title">
+            <div id="roleBadge" class="badge">Giáo viên</div>
+            <h2 id="formTitle">Góp ý từ Giáo viên</h2>
+            <p id="formDesc">Chia sẻ để tài liệu hoàn thiện hơn.</p>
+          </div>
+
+          <form id="feedbackForm">
+            <div class="grid two">
+              <label>
+                <span>Cơ sở *</span>
+                <select id="center" required>
+                  <option value="">Chọn cơ sở</option>
+                  <option>CS1</option><option>CS2</option><option>CS5</option><option>CS7</option>
+                  <option>CS8</option><option>CS9</option><option>CS10</option><option>CS11</option>
+                </select>
+              </label>
+
+              <label id="nameWrap">
+                <span id="nameLabel">Họ và tên</span>
+                <input id="name" type="text" placeholder="Nhập họ và tên"/>
+              </label>
+
+              <label>
+                <span>Môn học *</span>
+                <select id="subject" required>
+                  <option value="">Chọn môn</option>
+                  <option>Toán</option><option>Ngữ văn</option><option>Tiếng Anh</option><option>KHTN</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Khối *</span>
+                <select id="grade" required>
+                  <option value="">Chọn khối</option>
+                  <option>6</option><option>7</option><option>8</option><option>9</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              <span>Trang / Bài / Chủ đề</span>
+              <input id="location" type="text" placeholder="Ví dụ: Trang 12–13, Bài 3, phần đáp án"/>
+            </label>
+
+            <label>
+              <span>Nhóm góp ý *</span>
+              <select id="category" required>
+                <option value="">Chọn nhóm góp ý</option>
+                <option>Lỗi chính tả / trình bày</option>
+                <option>Kiến thức chưa chính xác / chưa rõ</option>
+                <option>Bài tập / đáp án / hướng dẫn cần điều chỉnh</option>
+                <option>Mức độ khó – dễ chưa phù hợp</option>
+                <option>Chưa phù hợp tiến độ học</option>
+                <option>Đề xuất bổ sung</option>
+                <option>Góp ý khác</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Nội dung phản hồi / góp ý *</span>
+              <textarea id="content" rows="5" required placeholder="Không cần viết dài, chỉ cần rõ ý: đang có gì, vướng ở đâu, cần chỉnh gì..."></textarea>
+            </label>
+
+            <label id="suggestionWrap">
+              <span>Đề xuất điều chỉnh</span>
+              <textarea id="suggestion" rows="3" placeholder="Nếu có, nêu cách sửa hoặc bổ sung"></textarea>
+            </label>
+
+            <label id="imageWrap" class="upload-box">
+              <span>Ảnh minh họa</span>
+              <input id="imageInput" type="file" accept="image/*"/>
+              <small>Giáo viên có thể chụp đúng trang/vị trí cần góp ý.</small>
+            </label>
+
+            <label id="contactWrap">
+              <span>Họ tên / SĐT / Zalo (nếu muốn được liên hệ lại)</span>
+              <input id="contact" type="text" placeholder="Không bắt buộc"/>
+            </label>
+
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+            <button type="submit" class="primary">Gửi góp ý</button>
+          </form>
+        </div>
+
+        <aside class="helper-card" id="helperCard">
+          <div class="helper-icon" id="helperIcon">📌</div>
+          <h3 id="helperTitle" role="button" tabindex="0">Nội dung góp ý nên thu thập</h3>
+          <ul id="helperList"></ul>
+          <div class="helper-note" id="helperNote"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="successScreen" class="screen">
+      <div class="success-card">
+        <div class="success-icon">✓</div>
+        <h2>Đã gửi góp ý thành công!</h2>
+        <p>Phòng Đào tạo sẽ kiểm tra và tổng hợp để hoàn thiện tài liệu.</p>
+        <div class="code-box">
+          <span>Mã phản hồi</span>
+          <strong id="feedbackCode">GY-000001</strong>
+        </div>
+        <button class="primary" id="anotherBtn">+ Gửi góp ý khác</button>
+      </div>
+    </section>
+
+    <section id="adminScreen" class="screen">
+      <button class="back" id="adminBackBtn">← Về trang góp ý</button>
+      <div class="admin-head">
+        <div>
+          <span class="eyebrow">QUẢN TRỊ PĐT</span>
+          <h2>Danh sách góp ý</h2>
+        </div>
+        <button class="primary small" id="exportBtn">Xuất CSV</button>
+      </div>
+
+      <div class="stats" id="stats"></div>
+
+      <div class="toolbar">
+        <input id="searchInput" placeholder="Tìm theo mã, nội dung, môn..."/>
+        <select id="statusFilter">
+          <option value="">Tất cả trạng thái</option>
+          <option>Mới tiếp nhận</option>
+          <option>Đang xác minh</option>
+          <option>Đang xử lý</option>
+          <option>Đã xử lý</option>
+          <option>Đóng – không điều chỉnh</option>
+        </select>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Mã</th><th>Thời gian</th><th>Đối tượng</th><th>CS</th><th>Môn</th><th>Khối</th>
+              <th>Trang/Bài</th><th>Nội dung</th><th>Trạng thái</th>
+            </tr>
+          </thead>
+          <tbody id="feedbackTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
